@@ -1,0 +1,10 @@
+def get_number():     
+	for num in range(30):
+		if num % 2 != 0:             
+			yield num 
+temp = get_number()  
+num= list(temp)
+x = num[0] 
+y = num[4]  
+z = num[-1] 
+print("Первое ",x, " Пятое ",y," Последднее",z)
