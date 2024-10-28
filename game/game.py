@@ -1,6 +1,6 @@
-import random
+from random import *
 
-def generate_rps()
+def generate_rps():
 	x=randint(0,2)
 	return x
 
@@ -16,16 +16,16 @@ def interp(x):
 def win_interp(w,q):
 	lis=['Камень','Ножницы','Бумага']
 	print("робот: ",lis[q])
-	if win=1:
+	if w==1:
 		print("Вы выиграли!")
-	elif win=2:
+	elif w==2:
 		print("Вы проиграли!")
 	else:
 		print("Ничья!")		
 
 
 
-def maingameplay(skip)
+def maingameplay(skip):
 	if skip==False: 
 		print("Игра в камень ножницы бумага!")
 		print("Правила Игры")
@@ -33,9 +33,9 @@ def maingameplay(skip)
 	print("Введите ваш знак в формате 'Камень','Ножницы' или 'Бумага'")
 	try:
 		user=input()
-		if !(user="Камень" or user="Ножницы" or user="Бумага")==True:
+		if not(user=="Камень" or user=="Ножницы" or user=="Бумага")==True:
 			print("Ошибка! Неверный ввод Введите в формате 'Камень','Ножницы' или 'Бумага' ")
-				return maingameplay(True) 			
+			return maingameplay(True) 			
 		x=interp(user)
 		bot= generate_rps()
 		win=0
@@ -60,4 +60,6 @@ def maingameplay(skip)
 		win_interp(win,bot)
 	except ValueError:
 		print("Неверный ввод")
-		return maingameplay()		
+		return maingameplay(True)		
+
+maingameplay(False)
